@@ -1,20 +1,20 @@
 package tp4_grupo18;
 
 class Padre {
-    private String nombre;
+    protected String nombre;
     private String apellido;
     private Casa casa;
     private Auto auto;
 
     public Padre(Auto auto) {
-        this.nombre = "Papá";
-        this.apellido = "López";
+        this.nombre = "Papa";
+        this.apellido = "Lopez";
         construirCasa();
         comprarAuto(auto);
     }
 
     public void construirCasa() {
-        this.casa = new Casa("Centro. 2 pisos");
+        this.casa = new Casa("Centro. (2 pisos)");
     }
 
     public void comprarAuto(Auto auto) {
@@ -22,7 +22,7 @@ class Padre {
     }
 
     public void cantar() {
-        System.out.println("Así canta tu padre, Don " + apellido);
+        System.out.println("Asi canta tu padre, Don " + apellido);
     }
 
     public String getApellido() {

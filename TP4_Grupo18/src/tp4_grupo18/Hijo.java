@@ -1,7 +1,7 @@
 package tp4_grupo18;
 
 class Hijo extends Padre implements Madre, Tio, Hermano {
-    private String nombre;
+    protected String nombre;
     private double billetera;
     private Celular celular;
 
@@ -12,47 +12,50 @@ class Hijo extends Padre implements Madre, Tio, Hermano {
         this.billetera = 0.0;
     }
 
-    // Hereda el método de cantar del padre y lo personaliza
+    // personaliza metodo cantar del padre
     @Override
     public void cantar() {
         super.cantar();
-        System.out.println("Y así canta " + nombre);
+        System.out.println("Y asi canta " + nombre);
     }
 
-    // Método para conducir el auto
+    // metodo para conducir el auto
     public void conducirAuto(Auto auto) {
-        System.out.println(nombre + " está conduciendo el auto " + auto.getModelo() + " con patente " + auto.getPatente());
+        System.out.println("Conduciendo un " + auto.getModelo() + " de un amigo!");
     }
 
-    // Métodos de la interfaz Madre
+    // interfaz Madre
     @Override
     public void bailar() {
-        System.out.println(nombre + " está bailando.");
+        System.out.println("Se bailar como a mi madre ♪ ♫ ♪");
     }
 
     @Override
     public int jugarLoteria() {
-        System.out.println(nombre + " está jugando la lotería con el número de la suerte " + NROSUERTE);
+        System.out.println("SALIO EL NUMERO DE LA SUERTE " + NROSUERTE);
+        // Solo agregar la fortuna en este punto, para evitar duplicación
+        billetera += FORTUNA;
+        System.out.println("Heredaste la Fortuna de " + FORTUNA + " de tu madre la ROSA!! Y ahora tienes " + billetera + " U$S.");
         return NROSUERTE;
     }
 
-    // Métodos de la interfaz Tio
+    // interfaz Tio
     @Override
     public void heredarDinero(double money) {
-        billetera += money;
-        System.out.println(nombre + " ha heredado $" + money + " de su tío. Billetera ahora: $" + billetera);
+        billetera += money; // Solo sumamos el dinero del tío
+        System.out.println("Tio Lucas te regala estos dolaritos! Ahora tienes " + billetera + " U$S.");
     }
 
-    // Métodos de la interfaz Hermano
+    // interfaz Hermano
     @Override
     public void jugarFutbol() {
-        System.out.println(nombre + " está jugando al fútbol.");
+        System.out.println("Se jugar futbol gracias a mi hermano");
     }
 
     @Override
     public int hacerGoles() {
-        int goles = (int) (Math.random() * 10);
-        System.out.println(nombre + " ha hecho " + goles + " goles.");
+        int goles = (int) (Math.random() * 10); // Genera un número aleatorio de goles
+        System.out.println("Jugando al Futbol, Hoy has hecho " + goles + " goles");
         return goles;
     }
 }

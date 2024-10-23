@@ -8,7 +8,7 @@ public class Auto {
     public Auto(String patente, String modelo) {
         this.patente = patente;
         this.modelo = modelo;
-        this.combustible = 50; // Tanque lleno
+        this.combustible = 50;
     }
 
     public String getPatente() {
