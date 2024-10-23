@@ -33,7 +33,6 @@ class Hijo extends Padre implements Madre, Tio, Hermano {
     @Override
     public int jugarLoteria() {
         System.out.println("SALIO EL NUMERO DE LA SUERTE " + NROSUERTE);
-        // Solo agregar la fortuna en este punto, para evitar duplicación
         billetera += FORTUNA;
         System.out.println("Heredaste la Fortuna de " + FORTUNA + " de tu madre la ROSA!! Y ahora tienes " + billetera + " U$S.");
         return NROSUERTE;
@@ -42,7 +41,7 @@ class Hijo extends Padre implements Madre, Tio, Hermano {
     // interfaz Tio
     @Override
     public void heredarDinero(double money) {
-        billetera += money; // Solo sumamos el dinero del tío
+        billetera += money;
         System.out.println("Tio Lucas te regala estos dolaritos! Ahora tienes " + billetera + " U$S.");
     }
 
