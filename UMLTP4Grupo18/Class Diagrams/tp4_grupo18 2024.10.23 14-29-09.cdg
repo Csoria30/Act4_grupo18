@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="tp4_grupo18">
+  <ClassDiagramComponents>
+    <Class name="Auto" package="tp4_grupo18" visibility="public" xPosition="20.0" yPosition="103.0">
+      <Fields>
+        <Field name="patente" type="String" visibility="private"/>
+        <Field name="modelo" type="String" visibility="private"/>
+        <Field name="combustible" type="double" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="patente"/>
+          <Argument type="String" name="modelo"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getPatente" returnType="String" visibility="public"/>
+        <Method name="getModelo" returnType="String" visibility="public"/>
+        <Method name="getCombustible" returnType="double" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Casa" package="tp4_grupo18" visibility="public" xPosition="297.0" yPosition="13.0">
+      <Fields>
+        <Field name="zona" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="zona"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getZona" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Celular" package="tp4_grupo18" visibility="public" xPosition="982.0" yPosition="205.0">
+      <Fields>
+        <Field name="compania" type="String" visibility="private"/>
+        <Field name="numero" type="String" visibility="private"/>
+        <Field name="saldo" type="double" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="compania"/>
+          <Argument type="String" name="numero"/>
+          <Argument type="double" name="saldo"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getCompania" returnType="String" visibility="public"/>
+        <Method name="getNumero" returnType="String" visibility="public"/>
+        <Method name="getSaldo" returnType="double" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Hijo" package="tp4_grupo18" visibility="public" xPosition="568.0" yPosition="394.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="billetera" type="double" visibility="private"/>
+        <Field name="celular" type="Celular" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="Celular" name="celular"/>
+          <Argument type="Auto" name="auto"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="cantar" returnType="void" visibility="public"/>
+        <Method name="conducirAuto" returnType="void" visibility="public">
+          <Argument type="Auto" name="auto"/>
+        </Method>
+        <Method name="bailar" returnType="void" visibility="public"/>
+        <Method name="jugarLoteria" returnType="int" visibility="public"/>
+        <Method name="heredarDinero" returnType="void" visibility="public">
+          <Argument type="double" name="money"/>
+        </Method>
+        <Method name="jugarFutbol" returnType="void" visibility="public"/>
+        <Method name="hacerGoles" returnType="int" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Padre" package="tp4_grupo18" visibility="public" xPosition="568.0" yPosition="13.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="apellido" type="String" visibility="private"/>
+        <Field name="casa" type="Casa" visibility="private"/>
+        <Field name="auto" type="Auto" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Auto" name="auto"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="construirCasa" returnType="void" visibility="public"/>
+        <Method name="comprarAuto" returnType="void" visibility="public">
+          <Argument type="Auto" name="auto"/>
+        </Method>
+        <Method name="cantar" returnType="void" visibility="public"/>
+        <Method name="getApellido" returnType="String" visibility="public"/>
+        <Method name="getCasa" returnType="Casa" visibility="public"/>
+        <Method name="getAuto" returnType="Auto" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="TP4_Grupo18" package="tp4_grupo18" visibility="public" xPosition="36.0" yPosition="332.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Interface name="Hermano" package="tp4_grupo18" visibility="public" xPosition="789.0" yPosition="182.0">
+      <Methods>
+        <Method name="jugarFutbol" returnType="void" visibility="package"/>
+        <Method name="hacerGoles" returnType="int" visibility="package"/>
+      </Methods>
+    </Interface>
+    <Interface name="Madre" package="tp4_grupo18" visibility="public" xPosition="1009.0" yPosition="523.0">
+      <Methods>
+        <Method name="bailar" returnType="void" visibility="package"/>
+        <Method name="jugarLoteria" returnType="int" visibility="package"/>
+      </Methods>
+    </Interface>
+    <Interface name="Tio" package="tp4_grupo18" visibility="public" xPosition="22.0" yPosition="466.0">
+      <Methods>
+        <Method name="heredarDinero" returnType="void" visibility="package">
+          <Argument type="double" name="money"/>
+        </Method>
+      </Methods>
+    </Interface>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="auto" source="tp4_grupo18.Padre" target="tp4_grupo18.Auto" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="celular" source="tp4_grupo18.Hijo" target="tp4_grupo18.Celular" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="casa" source="tp4_grupo18.Padre" target="tp4_grupo18.Casa" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="tp4_grupo18.Hijo" target="tp4_grupo18.Auto" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="tp4_grupo18.Hijo" target="tp4_grupo18.Padre"/>
+    <UseRelation source="tp4_grupo18.Padre" target="tp4_grupo18.Casa" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="tp4_grupo18.Hijo" target="tp4_grupo18.Tio"/>
+    <UseRelation source="tp4_grupo18.Padre" target="tp4_grupo18.Auto" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="tp4_grupo18.Hijo" target="tp4_grupo18.Hermano"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="tp4_grupo18.Hijo" target="tp4_grupo18.Madre"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
